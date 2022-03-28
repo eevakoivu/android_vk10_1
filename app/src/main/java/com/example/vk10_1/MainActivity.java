@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
 
         web.setWebViewClient(new WebViewClient());
-        web.loadUrl("http://www.lut.fi"); //https://www.google.fi/
+        web.loadUrl("http://www.google.fi");
         editText();
     }
 
@@ -34,14 +34,7 @@ public class MainActivity extends AppCompatActivity {
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                /*if(keyEvent.getAction() == KeyEvent.ACTION_DOWN && i == KeyEvent.KEYCODE_ENTER){
-                    url = editText.getText().toString();
-                    if(!url.isEmpty()){
-                        web.loadUrl("http://"+url);
-                    }
-                    return true;
-                }*/
-                if(i == EditorInfo.IME_ACTION_GO){
+                if(i == EditorInfo.IME_NULL && keyEvent.getAction() == KeyEvent.ACTION_DOWN){
                     url = editText.getText().toString();
                     if(!url.isEmpty()){
                         web.loadUrl("http://"+url);
