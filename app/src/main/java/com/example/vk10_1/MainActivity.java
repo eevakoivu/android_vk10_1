@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
 
         web.setWebViewClient(new WebViewClient());
+        web.getSettings().setJavaScriptEnabled(true);
         web.loadUrl("http://www.google.fi");
         editText();
     }
